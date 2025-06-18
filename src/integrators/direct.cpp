@@ -223,7 +223,7 @@ public:
         return dr::select(dr::isfinite(w), w, 0.f);
     }
 
-    MI_DECLARE_CLASS()
+    MI_DECLARE_CLASS(DirectIntegrator)
 private:
     size_t m_emitter_samples;
     size_t m_bsdf_samples;
@@ -231,6 +231,5 @@ private:
     ScalarFloat m_weight_bsdf, m_weight_lum;
 };
 
-MI_IMPLEMENT_CLASS_VARIANT(DirectIntegrator, SamplingIntegrator)
-MI_EXPORT_PLUGIN(DirectIntegrator, "Direct integrator");
+MI_EXPORT_PLUGIN(DirectIntegrator)
 NAMESPACE_END(mitsuba)

@@ -82,8 +82,8 @@ public:
         m_components.push_back(BSDFFlags::GlossyReflection | BSDFFlags::FrontSide);
         m_flags = m_components[0];
 
-        auto fs            = mitsuba::file_resolver();
-        fs::path file_path = fs->resolve(props.string("filename"));
+        auto fs            = file_resolver();
+        fs::path file_path = fs->resolve(props.get<std::string>("filename"));
         m_name             = file_path.filename().string();
 
         ref<TensorFile> tf = new TensorFile(file_path);
@@ -467,7 +467,7 @@ public:
         return oss.str();
     }
 
-    MI_DECLARE_CLASS()
+    MI_DECLARE_CLASS(Measured)
 private:
     template <typename Value> Value u2theta(Value u) const {
         return dr::square(u) * (dr::Pi<Float> / 2.f);
@@ -497,6 +497,5 @@ private:
     int m_reduction;
 };
 
-MI_IMPLEMENT_CLASS_VARIANT(Measured, BSDF)
-MI_EXPORT_PLUGIN(Measured, "Measured material")
+MI_EXPORT_PLUGIN(Measured)
 NAMESPACE_END(mitsuba)

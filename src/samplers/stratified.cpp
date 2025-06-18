@@ -176,7 +176,7 @@ public:
         return oss.str();
     }
 
-    MI_DECLARE_CLASS()
+    MI_DECLARE_CLASS(StratifiedSampler)
 
 private:
     StratifiedSampler(const StratifiedSampler &sampler) : Base(sampler) {
@@ -200,6 +200,5 @@ private:
     UInt32 m_permutation_seed;
 };
 
-MI_IMPLEMENT_CLASS_VARIANT(StratifiedSampler, Sampler)
-MI_EXPORT_PLUGIN(StratifiedSampler, "Stratified Sampler");
+MI_EXPORT_PLUGIN(StratifiedSampler)
 NAMESPACE_END(mitsuba)
