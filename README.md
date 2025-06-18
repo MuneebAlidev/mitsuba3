@@ -30,11 +30,11 @@ It consists of a core library and a set of plugins that implement functionality
 ranging from materials and light sources to complete rendering algorithms.
 
 Mitsuba 3 is *retargetable*: this means that the underlying implementations and
-data structures can transform to accomplish various different tasks. For
+data structures can transform to accomplish various tasks. For
 example, the same code can simulate both scalar (classic one-ray-at-a-time) RGB transport
-or differential spectral transport on the GPU. This all builds on
+and differential spectral transport on the GPU. This all builds on
 [Dr.Jit](https://github.com/mitsuba-renderer/drjit), a specialized *just-in-time*
-(JIT) compiler developed specifically for this project.
+(JIT) A compiler was developed specifically for this project.
 
 ## Main Features
 
@@ -53,7 +53,7 @@ or differential spectral transport on the GPU. This all builds on
   other disciplines.
 
 - **Differentiation**: Mitsuba 3 is a differentiable renderer, meaning that it
-  can compute derivatives of the entire simulation with respect to input
+  can compute derivatives of the entire simulation concerning input
   parameters such as camera pose, geometry, BSDFs, textures, and volumes. It
   implements recent differentiable rendering algorithms developed at EPFL.
 
@@ -64,19 +64,19 @@ or differential spectral transport on the GPU. This all builds on
 ## Tutorial videos, documentation
 
 We've recorded several [YouTube videos][10] that provide a gentle introduction
-Mitsuba 3 and Dr.Jit. Beyond this you can find complete Juypter notebooks
+Mitsuba 3 and Dr.Jit. Beyond this, you can find complete Jupyter notebooks
 covering a variety of applications, how-to guides, and reference documentation
 on [readthedocs][2].
 
 ## Installation
 
-We provide pre-compiled binary wheels via PyPI. Installing Mitsuba this way is as simple as running
+We provide pre-compiled binary wheels via PyPI. Installing Mitsuba this way is as simple as running.
 
 ```bash
 pip install mitsuba
 ```
 
-on the command line. The Python package includes thirteen variants by default:
+On the command line. The Python package includes thirteen variants by default:
 
 - ``scalar_rgb``
 - ``scalar_spectral``
@@ -93,10 +93,10 @@ on the command line. The Python package includes thirteen variants by default:
 - ``cuda_ad_spectral_polarized``
 
 The scalar variants perform one-ray-at-a-time simulations, while the LLVM and CUDA 
-variants can be used for inverse rendering on the CPU or GPU respectively. To access additional 
+variants can be used for inverse rendering on the CPU or GPU, respectively. To access additional 
 variants, you will need to compile a custom version of Dr.Jit using CMake. Please see the
 [documentation](https://mitsuba.readthedocs.io/en/latest/src/developer_guide/compiling.html)
-for details on this.
+For details on this.
 
 ### Requirements
 
@@ -107,7 +107,7 @@ for details on this.
 ## Usage
 
 Here is a simple "Hello World" example that shows how simple it is to render a
-scene using Mitsuba 3 from Python:
+Scene using Mitsuba 3 from Python:
 
 ```python
 # Import the library using the alias "mi"
@@ -134,7 +134,7 @@ Significant features and/or improvements to the code were contributed by
 [Merlin Nimier-David](https://merlin.nimierdavid.fr/),
 [Delio Vicini](https://dvicini.github.io/),
 [Tizian Zeltner](https://tizianzeltner.com/),
-[Baptiste Nicolet](https://bnicolet.com/),
+[B,aptiste Nicolet](https://bnicolet.com/),
 [Miguel Crespo](https://mcrespo.me/),
 [Vincent Leroy](https://github.com/leroyvn), and
 [Ziyi Zhang](https://github.com/ziyi-zhang).
